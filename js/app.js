@@ -21,15 +21,15 @@ class MenuForm {
                 id: 1,
                 type: 'meat',
                 item: 'fried turkey',
-                imgUrl: 'fried_turkey.jpeg',
+                imgUrl: 'fried_turkey.jpg',
                 isChecked: false,
-                madeBy: 'Satch'
+                madeBy: 'clint'
             },
             {
                 id: 2,
                 type: 'meat',
                 item: 'oven turkey',
-                imgUrl: 'oven_turey.jpeg',
+                imgUrl: 'oven_turkey.jpg',
                 isChecked: false,
                 madeBy: 'Mom'
             },
@@ -39,15 +39,15 @@ class MenuForm {
                 item: 'ham',
                 imgUrl: 'ham.jpeg',
                 isChecked: false,
-                madeBy: 'Cousin Tee'
+                madeBy: 'Dad'
             },
             {
                 id: 4,
                 type: 'meat',
-                item: 'turducken',
-                imgUrl: 'turducken.jpeg',
+                item: 'fried catfish',
+                imgUrl: 'fish.jpeg',
                 isChecked: false,
-                madeBy: 'Aunt Bea'
+                madeBy: 'Clint'
             },
             {
                 id: 5, 
@@ -55,55 +55,55 @@ class MenuForm {
                 item: 'dressing',
                 imgUrl: 'dressing.jpeg',
                 isChecked: false,
-                madeBy: 'Granny'
+                madeBy: 'Mom'
             }, 
             {
                 id: 6,
                 type: 'sides',
-                item: 'turnip greens',
-                imgUrl: 'turnip_greens.jpeg',
+                item: 'Green Beans',
+                imgUrl: 'green.jpeg',
                 isChecked: false,
-                madeBy: 'Cousin Gee'
+                madeBy: 'Brother'
             },
             {
                 id: 7,
                 type: 'sides',
-                item: 'mashed potatoes w/gravy',
-                imgUrl: 'mashed_potatoes.jpeg',
+                item: 'mashed potatoes',
+                imgUrl: 'mashed.jpeg',
                 isChecked: false,
-                madeBy: 'Aunt Kay'
+                madeBy: 'Aunt J'
             },
             {
                 id: 8,
                 type: 'sides',
-                item: 'deep fried loaded baked potato balls',
+                item: 'Corn',
                 imgUrl: 'baked_potato_balls.jpeg',
                 isChecked: false,
-                madeBy: 'Sister Q'
+                madeBy: 'Mom'
             },
             {
                 id: 9,
                 type: 'sides',
                 item: "mac n' cheese",
-                imgUrl: 'macncheese.jpeg',
+                imgUrl: 'mac.jpeg',
                 isChecked: false,
-                madeBy: 'Aunt V' 
+                madeBy: 'Clint' 
             },
             {
                 id: 10,
                 type: 'sides',
                 item: 'cranberry sauce',
-                imgUrl: 'cranberry_sauce.jpeg',
+                imgUrl: 'cranberry.jpeg',
                 isChecked: false,
-                madeBy: 'Brother T'
+                madeBy: 'Brother'
             },
             {
                 id: 11, 
                 type: 'sides',
                 item: 'greenbean casserole',
-                imgUrl: 'greenbean_casserole.jpeg',
+                imgUrl: 'casserole.jpeg',
                 isChecked: false,
-                madeBy: "Brother T's wife"
+                madeBy: "Mom"
             },
             {
                 id: 12,
@@ -111,13 +111,13 @@ class MenuForm {
                 item: 'cornbread',
                 imgUrl: 'cornbread.jpeg',
                 isChecked: false,
-                madeBy: "Cousin Gee's husband"
+                madeBy: "Dad"
             },
             {
                 id: 13, 
                 type: 'desserts',
                 item: 'sweet potato pie',
-                imgUrl: 'sweet_potato_pie.jpeg',
+                imgUrl: 'sweet.jpeg',
                 isChecked: false,
                 madeBy: "Granny"
             },
@@ -125,7 +125,7 @@ class MenuForm {
                 id: 14,
                 type: 'desserts',
                 item: 'pecan pie',
-                imgUrl: 'pecan_pie.jpeg',
+                imgUrl: 'pecan.jpeg',
                 isChecked: false,
                 madeBy: 'Mom'
             },
@@ -135,35 +135,35 @@ class MenuForm {
                 item: 'pound cake',
                 imgUrl: 'pound_cake.jpeg',
                 isChecked: false,
-                madeBy: 'Satch'
+                madeBy: 'Mom'
             },
             {
                 id: 16, 
                 type: 'desserts',
                 item: 'bread pudding',
-                imgUrl: 'bread_pudding.jpeg',
+                imgUrl: 'pudding.jpeg',
                 isChecked: false,
-                madeBy: "Sister T"
+                madeBy: "Clint"
             },
             {
                 id: 17,
                 type: 'drinks',
-                item: 'ginger ale',
-                imgUrl: 'ginger_ale.jpeg',
+                item: 'water',
+                imgUrl: 'water.jpeg',
                 isChecked: false
             },
             {
                 id: 18,
                 type: 'drinks',
                 item: 'sweet tea',
-                imgUrl: 'sweet_tea.jpeg',
+                imgUrl: 'sweettea.jpeg',
                 isChecked: false
             },
             {
                 id: 19,
                 type: 'drinks',
-                item: 'whiskey',
-                imgUrl: 'whiskey.jpeg',
+                item: 'coke',
+                imgUrl: 'coke.jpeg',
                 isChecked: false
             },
             {
@@ -181,17 +181,14 @@ class MenuForm {
             sides: [],
             desserts: [],
             drinks: ''
-
         }
     }
 
     init() {
-        // console.log('initialized')
         this.buildFigures(this.menu)
     }
 
     loadItems(el, child) {
-        // console.log('loaded')
         el.appendChild(child)
     }
 
@@ -199,39 +196,35 @@ class MenuForm {
 
         arr.forEach(obj => {
             // for each object build Figure
-            // console.assertlog(obj.hasOwnProperty('madeBy'))
+            
             const column = document.createElement('div')
-            column.classList.add('col')
+            column.classList.add('col', 'figs')
 
             column.innerHTML = `
-                <div class="figure-div" data-isChecked={obj.isChecked}>
+                <div class="figure-div h-100" data-isChecked=${obj.isChecked}>
                     <figure class="figure item-figure">
-                        <img src="https://via.placeholder.com/200x200" alt="placeholder img" class="img-fluid image figure-img food-image rounded" />
-                        <figcaption class="figure-caption food-caption">${obj.hasOwnProperty('madeBy') ? obj.madeBy : ''}</figcaption>
+                        <img src="images/${obj.imgUrl}" alt="${obj.item} made by ${obj.madeBy}" class="img-fluid image figure-img food-image w-100 rounded" />
+                        <figcaption class="figure-caption food-caption">${
+                            obj.hasOwnProperty('madeBy') ? obj.madeBy : ''
+                        }</figcaption>
+                        <h3 class="food-heading">${obj.item}</h3>
+                        <div class="form-check figure-form">
+                            <input 
+                                type="checkbox" 
+                                name="${obj.type}" 
+                                id="${obj.type}-${obj.id}"
+                                value="${obj.item}"
+                                class="form-check-input"
+                            />
+                            <label 
+                                for="${obj.type}-${obj.id}" 
+                                class="text-capitalize form-check-label figure-label">
+                                ${obj.item}
+                            </label>
+                        </div>
                     </figure>
-                    <h3 class="food-heading">${obj.item}</h3>
-                    <div class="form-check">
-                        <input 
-                            type="checkbox" 
-                            name="${obj.type}" 
-                            id="${obj.type}-${obj.id}"
-                            value="${obj.item}"
-                            class="form-check-input"
-                        />
-                        <label 
-                            for="${obj.type}-${obj.id}" 
-                            class="text-capitalize form-check-label">
-                            ${obj.item}
-                        </label>
-                    </div>
                 </div>
             `
-
-            // console.log(column)
-
-            // this.rows.forEach(row => {
-            //     this.loadItems(row, column)
-            // })
             switch (obj.type) {
                 case 'meat': 
                     this.loadItems(this.meatRow, column)
@@ -252,51 +245,66 @@ class MenuForm {
     }
 
     buildPlate() {
-        const person = document.getElementById('person').value
-        const checkboxs = document.querySelectorAll('input[type=checkbox]')
-        const foodItems = document.querySelectorAll('.fidure-div')
-        
-        checkboxs.forEach(checkbox => {
+        const person =  document.getElementById('person').value
+        const checkboxes = document.querySelectorAll('input[type=checkbox]')
+        // const foodItems = document.querySelectorAll('.figure-div')
+
+
+        checkboxes.forEach(checkbox => {
+
             const name = checkbox.name
             const value = checkbox.value
             if (checkbox.checked) {
                 // console.log(checkbox.value)
+                // console.log(name, value)
                 this.plate = {
-                    ... this.plate,
-                    person: person,
+                    // spread the old object
+                    ...this.plate,
+                    // replace the old values with the ones
+                    person,
+                    /**
+                     * 
+                     * This weird thing will take each 
+                     * key and then will spread the array and add each new value
+                     *
+                     */
                     [name]: [...this.plate[name],value]
+                    
                 }
 
+                
                 this.menu.forEach(item => {
-                    for (prop in item) {
-                        if (checkbox.value == item.item) {
-                            item.isChecked = checkbox.checked
-                        }
+                    if (checkbox.value == item.item) {
+                        item.isChecked = checkbox.checked
+                    }
+                    
+                })
+            } else {
+                this.menu.forEach(item => {
+                    if (checkbox.value == item.item) {
+                        item.isChecked = false
                     }
                 })
             }
         })
-
-        
-
-        // console.log(checkboxs)
-        // console.log('plate is ready')
         // console.log(this.plate)
-
+        const personPlate = document.getElementById('personPlate')
+        personPlate.innerText = `${this.plate.person}'s `
+        
         this.makeReceipt(this.menu)
-
     }
 
     makeReceipt(arr) {
-        for (let i = 0; i < arr.lenght; i++){
-            if (arr[i].isChecked){
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].isChecked) {
                 const listItem = document.createElement('li')
-                listItem.classList.add('list-group-item')
+                listItem.classList.add('list-group-item', 'li')
                 listItem.innerText = arr[i].item
     
                 this.foodList.appendChild(listItem)
-
-        }
+    
+            }
 
         }
 
@@ -306,19 +314,24 @@ class MenuForm {
 
 const submitBtn = document.getElementById('submitBtn')
 
+
 const action = new MenuForm() 
 action.init()
 
-submitBtn.addEventListener('click', ()=> {
+submitBtn.addEventListener('click', (e)=> {
+    e.preventDefault()
     // console.log('click')
     action.buildPlate()
+    submitBtn.setAttribute('disabled', true)
 })
 
-// let boj = {
-//     a: 1,
-//     b: 2,
+
+// let obj = {
+//     a: 1, 
+//     b: 2, 
 //     c: 3
 // }
 
-// for (key in obj)
-//     console.log(obj[key])
+// for (prop in obj) {
+//     console.log(obj[prop] * 3)
+// }
